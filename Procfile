@@ -1,0 +1,1 @@
+web: gunicorn s_a_m_system.wsgi

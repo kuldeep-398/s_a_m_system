@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SAM System</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="brand">SAM System - Admin</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_teachers' %}">Teachers</a></li>
+                <li><a href="{% url 'admin_students' %}">Students</a></li>
+                <li><a href="{% url 'admin_subjects' %}">Subjects</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main container -->
+    <div class="container" style="flex: 1;">
+        
+        <h2 class="dashboard-title">Admin Dashboard</h2>
+
+
+        <div class="dashboard-cards">
+            <a href="{% url 'admin_dashboard' %}" class="dashboard-card">
+                <h3>Total Users</h3>
+                <p class="count total">{{ total_users }}</p>
+            </a>
+
+            <a href="{% url 'admin_teachers' %}" class="dashboard-card">
+                <h3>Teachers</h3>
+                <p class="count teachers">{{ total_teachers }}</p>
+            </a>
+
+            <a href="{% url 'admin_students' %}" class="dashboard-card">
+                <h3>Students</h3>
+                <p class="count students">{{ total_students }}</p>
+            </a>
+
+            <a href="{% url 'admin_subjects' %}" class="dashboard-card">
+                <h3>Subjects</h3>
+                <p class="count subjects">{{ total_subjects }}</p>
+            </a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 15px 0; background: rgba(0, 0, 0, 0.8); color: #fff; font-size: 0.9rem; margin-top: auto;">
+        <p>© 2025 SAM System | All Rights Reserved</p>
+    </footer>
+
+</body>
